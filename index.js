@@ -695,8 +695,8 @@ function test(questions) {
       chalk.blue.bold(`Question ${index + 1} from 10:\n${q.question}\n`)
     );
     // Jede Option für die aktuelle Frage durchlaufen und anzeigen
-    q.options.forEach((option) => console.log(option));
-    let userAnswer = readlineSync.question("\nYour answer: ").toUpperCase();
+    q.options.forEach((option) => console.log(chalk.bold(option)));
+    let userAnswer = readlineSync.question(chalk.bold("\nYour answer: ")).toUpperCase();
     console.clear();
     if (userAnswer === q.answer) {
       score += 10;
